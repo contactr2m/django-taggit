@@ -1,5 +1,7 @@
 django-taggit
 =============
+.. image:: https://travis-ci.org/contactr2m/django-taggit.svg?branch=master
+    :target: https://travis-ci.org/contactr2m/django-taggit
 
 .. image:: https://jazzband.co/static/img/badge.svg
    :target: https://jazzband.co/
