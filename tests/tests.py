@@ -453,10 +453,10 @@ class TaggableManagerTestCase(BaseTaggingTestCase):
         #   1  query to see which tags exist
         #   1  query to check existing ids for sending m2m_changed signal
         # + 3  queries to create the tags.
-        # + 6  queries to create the intermediary things (including SELECTs, to
+        # + 9  queries to create the intermediary things (including SELECTs, to
         #      make sure we don't double create.
-        # + 12 for save points.
-        queries = 23
+        # + 18 for save points.
+        queries = 32
         self.assertNumQueries(queries, apple.tags.add, "red", "delicious", "green")
 
         pear = self.food_model.objects.create(name="pear")
