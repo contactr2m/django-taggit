@@ -217,8 +217,7 @@ class _TaggableManager(models.Manager):
         for new_tag in tags_to_create:
             if case_insensitive:
                 tag, created = manager.get_or_create(
-                    name__iexact=new_tag,
-                    defaults={'name': new_tag},
+                    name__iexact=new_tag, defaults={"name": new_tag}
                 )
             else:
                 tag, created = manager.get_or_create(name=new_tag)
@@ -366,7 +365,7 @@ class _TaggableManager(models.Manager):
                     % remote_field.field_name: [r["content_object"] for r in qs]
                 }
             )
-            
+
             actual_remote_field_name = f.target_field.get_attname()
             for obj in objs:
                 # items[(getattr(obj, remote_field.field_name),)] = obj
